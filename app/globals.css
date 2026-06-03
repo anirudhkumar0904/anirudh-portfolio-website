@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 33% 5%;
+  --foreground: 210 40% 98%;
+  --border: 0 0% 100%;
+  --input: 0 0% 100%;
+  --ring: 239 84% 67%;
+  --primary: 239 84% 67%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 27% 8%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 240 26% 10%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 262 83% 58%;
+  --accent-foreground: 210 40% 98%;
+  --radius: 0.5rem;
+  --obsidian: #080810;
+  --obsidian-alt: #0a0a14;
+  --surface: #0f0f1a;
+  --line: #ffffff0f;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-caption: #64748b;
+  --hero-accent: #6366f1;
+  --hero-soft: #818cf8;
+  --cyan: #22d3ee;
+  --violet: #a855f7;
+  --amber: #f59e0b;
+  --red: #ef4444;
+  --green: #22c55e;
+  --blue: #3b82f6;
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(99, 102, 241, 0.08), transparent 34rem),
+    radial-gradient(circle at 86% 10%, rgba(168, 85, 247, 0.06), transparent 32rem),
+    radial-gradient(circle at 50% 100%, rgba(34, 211, 238, 0.04), transparent 36rem),
+    var(--obsidian);
+  color: hsl(var(--foreground));
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+}
+
+* {
+  scrollbar-color: #6366f1 #080810;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg, #6366f1, #a855f7);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.13;
+  mix-blend-mode: overlay;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.9) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.6) 0.4px, transparent 0.4px);
+  background-size: 12px 12px, 18px 18px;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: white;
+}
+
+.section-shell {
+  position: relative;
+  z-index: 10;
+  padding-block: clamp(5rem, 12vw, 9rem);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #6366f1, #a855f7, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.animated-grid {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.055) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 70%, transparent);
+}
+
+.hero-radial {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.08), transparent 34rem),
+    radial-gradient(circle at 100% 0%, rgba(168, 85, 247, 0.06), transparent 32rem),
+    radial-gradient(circle at 50% 100%, rgba(34, 211, 238, 0.04), transparent 36rem);
+}
+
+.spotlight {
+  background:
+    radial-gradient(
+      420px circle at var(--x, 50%) var(--y, 50%),
+      color-mix(in srgb, var(--project-accent, #6366f1) 16%, transparent),
+      transparent 42%
+    ),
+    var(--surface);
+}
+
+.project-card {
+  border-color: color-mix(in srgb, var(--project-accent, #6366f1) 20%, transparent);
+}
+
+.project-card:hover {
+  border-color: color-mix(in srgb, var(--project-accent, #6366f1) 34%, transparent);
+  box-shadow: 0 22px 80px color-mix(in srgb, var(--project-accent, #6366f1) 40%, transparent);
+}
+
+.project-ring {
+  --tw-ring-color: color-mix(in srgb, var(--project-accent, #6366f1) 30%, transparent);
+}
+
+.project-corner-glow {
+  background: color-mix(in srgb, var(--project-accent, #6366f1) 16%, transparent);
+}
+
+.project-icon-shell {
+  border-color: color-mix(in srgb, var(--project-accent, #6366f1) 22%, transparent);
+  background: color-mix(in srgb, var(--project-accent, #6366f1) 10%, #0f0f1a);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--project-accent, #6366f1) 28%, transparent);
+}
+
+.project-accent-text {
+  color: var(--project-accent, #6366f1);
+}
+
+.project-dot {
+  background: var(--project-accent, #6366f1);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--project-accent, #6366f1) 45%, transparent);
+}
+
+.project-pill {
+  border-color: color-mix(in srgb, var(--project-accent, #6366f1) 22%, transparent);
+  background: color-mix(in srgb, var(--project-accent, #6366f1) 12%, transparent);
+  color: var(--project-accent, #6366f1);
+}
+
+.project-link-button {
+  border-color: color-mix(in srgb, var(--project-accent, #6366f1) 22%, transparent);
+  background: color-mix(in srgb, var(--project-accent, #6366f1) 10%, transparent);
+}
+
+.project-link-button:hover {
+  border-color: color-mix(in srgb, var(--project-accent, #6366f1) 45%, transparent);
+  background: color-mix(in srgb, var(--project-accent, #6366f1) 16%, transparent);
+}
+
+.skill-card {
+  border-color: color-mix(in srgb, var(--skill-accent, #6366f1) 18%, transparent);
+  background: var(--surface);
+}
+
+.skill-category-icon {
+  border-color: color-mix(in srgb, var(--skill-accent, #6366f1) 24%, transparent);
+  background: color-mix(in srgb, var(--skill-accent, #6366f1) 12%, transparent);
+  color: var(--skill-accent, #6366f1);
+}
+
+.skill-category-title {
+  color: var(--skill-accent, #6366f1);
+}
+
+.skill-pill {
+  border-color: color-mix(in srgb, var(--skill-accent, #6366f1) 18%, transparent);
+  background: color-mix(in srgb, var(--skill-accent, #6366f1) 10%, transparent);
+  color: #ffffff;
+}
+
+.skill-pill:hover {
+  border-color: color-mix(in srgb, var(--skill-accent, #6366f1) 42%, transparent);
+  background: color-mix(in srgb, var(--skill-accent, #6366f1) 15%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--skill-accent, #6366f1) 28%, transparent);
+}
+
+.award-card {
+  border-color: color-mix(in srgb, var(--award-accent, #f59e0b) 24%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--award-accent, #f59e0b) 14%, transparent), transparent 48%),
+    var(--surface);
+}
+
+.award-shimmer::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  transform: translateX(-120%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--award-accent, #f59e0b) 36%, white),
+    transparent
+  );
+  animation: shimmer 3.4s linear infinite;
+}
+
+.glass-line {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
