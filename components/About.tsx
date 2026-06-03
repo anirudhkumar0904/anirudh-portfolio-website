@@ -7,7 +7,17 @@ import { useRef } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { stats } from "@/lib/data";
 
-function Counter({ value, suffix, prefix = "" }: { value: number; suffix: string; prefix?: string }) {
+function Counter({
+  value,
+  suffix,
+  prefix = "",
+  decimals = 0
+}: {
+  value: number;
+  suffix: string;
+  prefix?: string;
+  decimals?: number;
+}) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [display, setDisplay] = useState(0);
@@ -17,15 +27,15 @@ function Counter({ value, suffix, prefix = "" }: { value: number; suffix: string
     const controls = animate(0, value, {
       duration: 1.6,
       ease: "easeOut",
-      onUpdate: (latest) => setDisplay(Math.round(latest))
+      onUpdate: (latest) => setDisplay(Number(latest.toFixed(decimals)))
     });
     return () => controls.stop();
-  }, [inView, value]);
+  }, [decimals, inView, value]);
 
   return (
     <span ref={ref}>
       {prefix}
-      {display}
+      {decimals > 0 ? display.toFixed(decimals) : Math.round(display)}
       {suffix}
     </span>
   );
@@ -73,7 +83,12 @@ export function About() {
                 transition={{ delay: index * 0.08, duration: 0.6 }}
               >
                 <div className="font-display text-3xl font-semibold text-[#22d3ee] sm:text-4xl">
-                  <Counter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
+                  <Counter
+                    value={stat.value}
+                    suffix={stat.suffix}
+                    prefix={stat.prefix}
+                    decimals={stat.decimals}
+                  />
                 </div>
                 <p className="mt-3 text-sm leading-6 text-[#94a3b8]">{stat.label}</p>
               </motion.div>

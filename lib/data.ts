@@ -45,10 +45,10 @@ export const subtitles = [
 ];
 
 export const stats = [
-  { value: 6, suffix: "+", label: "Shipped AI/IoT Systems" },
-  { value: 5, suffix: "", label: "Languages in AWS Pipeline" },
-  { value: 96, suffix: "%", label: "API Call Reduction" },
-  { value: 2, prefix: "≤", suffix: "s", label: "Live GPS Stream Latency" }
+  { value: 98, suffix: "%+", label: "Deepfake Detection Accuracy" },
+  { value: 96, suffix: "%", label: "API Call Reduction (AWS Pipeline)" },
+  { value: 0.0014, prefix: "₹", suffix: "", label: "Cost Per Review (FashionSense AI)", decimals: 4 },
+  { value: 15, prefix: "Top ", suffix: "", label: "Amazon AI Hackathon Finalist" }
 ];
 
 export const experience = [
