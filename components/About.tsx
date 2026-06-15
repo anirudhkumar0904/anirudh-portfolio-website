@@ -60,7 +60,7 @@ export function About() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-lg leading-9 text-[#94a3b8]">
-              I&apos;m a final-year CS (IoT & Automation) student at SASTRA University, graduating
+              I&apos;m a CS (IoT & Automation) graduate from SASTRA University, graduated
               May 2026. I build AI systems that work in production — from RAG pipelines with
               built-in hallucination detection, to deepfake classifiers hitting 99%+ accuracy, to
               multilingual AWS pipelines cutting costs to ₹0.0014 per review.

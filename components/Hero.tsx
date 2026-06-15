@@ -70,7 +70,7 @@ export function Hero() {
           transition={{ delay: 2.35, duration: 0.7 }}
         >
           <Sparkles className="h-4 w-4 text-[#818cf8]" aria-hidden="true" />
-          AI systems engineer · available May 2026
+          AI systems engineer · available now
         </motion.div>
 
         <motion.h1
