@@ -39,27 +39,27 @@ export const socialLinks = [
 
 export const subtitles = [
   "Agentic AI Engineer",
-  "RAG Systems Builder",
+  "GraphRAG Systems Builder",
   "AWS ML Architect",
   "Automation Engineer"
 ];
 
 export const stats = [
-  { value: 98, suffix: "%+", label: "Deepfake Detection Accuracy" },
-  { value: 96, suffix: "%", label: "API Call Reduction (AWS Pipeline)" },
-  { value: 0.0014, prefix: "₹", suffix: "", label: "Cost Per Review (FashionSense AI)", decimals: 4 },
-  { value: 15, prefix: "Top ", suffix: "", label: "Amazon AI Hackathon Finalist" }
+  { value: 91, prefix: "", suffix: "+", decimals: 0, label: "n8n Workflow Nodes Shipped" },
+  { value: 30, prefix: "", suffix: "+", decimals: 0, label: "Normalized GTM Event Types" },
+  { value: 96, prefix: "", suffix: "%", decimals: 0, label: "AWS API Cost Reduction" },
+  { value: 98, prefix: "", suffix: "%+", decimals: 0, label: "Deepfake Detection Accuracy" }
 ];
 
 export const experience = [
   {
     role: "Agentic AI Engineering Intern",
     company: "Glacis",
-    duration: "March 2025 - Present",
+    duration: "April 2026 - June 2026",
     points: [
-      "Built and automated GTM workflows using n8n for inbound and outbound marketing operations.",
-      "Developed AI-driven pipelines for lead capture, enrichment, segmentation, and outreach.",
-      "Integrated APIs, webhooks, CRM tools, and external platforms to automate campaign execution and customer engagement."
+      "Built a 91-node n8n automation platform with 5 event triggers, integrating HubSpot, Slack, Calendly, Dripify, Instantly, and DocSend for end-to-end GTM and CRM workflows.",
+      "Designed a JavaScript event normalization pipeline using REST APIs and webhooks to standardize 7 webhook formats into 30+ event types for scalable orchestration and analytics.",
+      "Developed an AI-powered lead qualification engine with Google Gemini, CRM synchronization, lead enrichment, campaign attribution, and human-in-the-loop Slack automation."
     ]
   },
   {
@@ -67,36 +67,41 @@ export const experience = [
     company: "Virran Tech Solutions Pvt Ltd.",
     duration: "June 2025 - July 2025",
     points: [
-      "Built a 12-module Leave Management System covering auth, dashboards, workflows, and reports in 4 weeks.",
-      "Automated leave balance calculations and approval flows using PL/SQL.",
-      "Implemented RBAC and interactive dashboards for real-time, secure HR visibility."
+      "Built a 12-module Leave Management System covering authentication, dashboards, workflows, and reports in 4 weeks.",
+      "Automated leave balance calculations and approvals using PL/SQL, reducing manual effort, processing time, and human error.",
+      "Implemented RBAC and interactive dashboards for secure, real-time visibility of employee leave data."
     ]
   }
 ];
 
 export const projects = [
   {
-    title: "HalluciNet",
-    tagline: "RAG Pipeline with Hallucination Detection",
-    icon: "🔬",
+    title: "BioGraphRAG",
+    tagline: "GraphRAG-Based Biomedical Discovery System",
+    icon: "🧬",
     size: "large",
     bullets: [
-      "Built dual-LLM hallucination detection over user-uploaded PDFs using ChromaDB vector search and Groq API.",
-      "Atomic claim verification: a secondary LLM independently fact-checks each generated claim against retrieved source chunks.",
-      "Delivers per-claim verdicts and a quantified Trust Score; deployed end-to-end on Render."
+      "Built a hybrid GraphRAG platform combining NetworkX knowledge graphs with ChromaDB vector search for multi-hop biomedical reasoning and drug-repurposing retrieval.",
+      "Developed a FastAPI backend using Llama 3.3 via Groq for evidence-grounded answers and automated fact-checking against PubMed citations.",
+      "Delivered sub-second response latency with resilient fallback generation and an interactive Vis.js knowledge-graph interface."
     ],
-    stack: ["Python", "ChromaDB", "Groq API", "Sentence-Transformers", "Flask", "Streamlit", "PyPDF"],
+    stack: ["FastAPI", "NetworkX", "ChromaDB", "Hugging Face", "Llama 3.3", "Groq", "JavaScript", "Vis.js"],
     links: [
       {
         label: "GitHub",
-        href: "https://github.com/anirudhkumar0904/hallucination-proof-rag",
+        href: "https://github.com/anirudhkumar0904/BioPharma-GraphRAG",
         icon: Github
+      },
+      {
+        label: "Live Demo",
+        href: "https://biopharma-graphrag-platform.onrender.com/",
+        icon: ExternalLink
       }
     ],
     caseStudy: {
-      problem: "RAG answers often sound authoritative even when the retrieved source does not support them.",
-      system: "The pipeline decomposes answers into claims, retrieves evidence, and assigns verdicts before the user trusts the response.",
-      proof: "Recruiters see a full-stack AI system with retrieval, verification, scoring, and deployment discipline."
+      problem: "Biomedical discovery requires reasoning across connected entities while keeping every generated conclusion grounded in credible evidence.",
+      system: "BioGraphRAG combines graph traversal, semantic retrieval, Llama 3.3 generation, and PubMed citation checks in one FastAPI pipeline.",
+      proof: "The deployed system demonstrates multi-hop GraphRAG architecture, evidence-aware generation, interactive visualization, and sub-second retrieval."
     }
   },
   {
@@ -105,12 +110,17 @@ export const projects = [
     icon: "👗",
     size: "standard",
     bullets: [
-      "Multilingual AWS pipeline processing fashion reviews in 5 Indian languages with 96% API call reduction via batching.",
-      "5-dimension SKU scoring plus return risk prediction for D2C fashion brands.",
-      "Cost efficiency: ₹0.0014 per review, enabling scalable product intelligence."
+      "Built a multilingual NLP pipeline supporting 9 Indian languages for aspect-based sentiment analysis, SKU-level return-risk prediction, and customer insight extraction.",
+      "Engineered an AWS inference pipeline using Translate, Comprehend, and Bedrock Nova, reducing API costs by 96%.",
+      "Generated LLM-powered review summaries and supplier recommendations through a FastAPI service deployed with AWS infrastructure."
     ],
     stack: ["AWS S3", "Translate", "Comprehend", "Bedrock Nova", "FastAPI", "EC2"],
     links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/anirudhkumar0904/fashionsense1",
+        icon: Github
+      },
       {
         label: "Live Demo",
         href: "https://fashionsense1.vercel.app/",
@@ -118,9 +128,9 @@ export const projects = [
       }
     ],
     caseStudy: {
-      problem: "D2C brands get thousands of reviews but cannot tell whether low ratings come from fit, fabric, price, or return intent.",
-      system: "AWS services normalize multilingual reviews, batch sentiment extraction, and generate executive SKU recommendations.",
-      proof: "A hackathon build that feels like an internal analytics product: fast, measurable, and cost-aware."
+      problem: "Fashion brands need to understand multilingual reviews at SKU level without making inference costs scale linearly with volume.",
+      system: "AWS services translate, classify, summarize, and convert customer feedback into aspect scores, return-risk signals, and supplier actions.",
+      proof: "The pipeline supports 9 Indian languages while reducing API costs by 96%, making review intelligence viable at production scale."
     }
   },
   {
@@ -129,9 +139,9 @@ export const projects = [
     icon: "🎭",
     size: "standard",
     bullets: [
-      "Designed dual-stream CNN: MobileNetV2 visual branch plus DCT frequency branch with bidirectional cross-attention.",
-      "Trained on 140K real and fake faces using 3-phase progressive learning on NVIDIA DGX A100 GPUs.",
-      "Surpassed SOTA baselines with 99%+ accuracy and near-perfect AUC on a 5,000-image unseen test set."
+      "Designed a dual-stream model combining MobileNetV2 visual features, DCT-based frequency features, and cross-attention for robust deepfake face detection.",
+      "Trained and optimized on 140K real and fake face images using mixed-precision training on NVIDIA DGX A100 GPUs.",
+      "Achieved 98%+ accuracy and near-perfect AUC through progressive learning and rigorous unseen-data evaluation."
     ],
     stack: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Matplotlib"],
     links: [
@@ -142,9 +152,38 @@ export const projects = [
       }
     ],
     caseStudy: {
-      problem: "Deepfake detectors fail when they overfit visual artifacts and miss frequency-domain manipulation traces.",
-      system: "DFCA-Net combines spatial and frequency evidence, then lets attention exchange signals across both streams.",
-      proof: "The result signals research depth: architecture design, large-scale training, GPU discipline, and metric rigor."
+      problem: "Deepfake detectors can overfit visible artifacts while missing manipulation traces that appear in the frequency domain.",
+      system: "DFCA-Net combines spatial and DCT evidence, then exchanges signals between both branches through cross-attention.",
+      proof: "Training on 140K images produced 98%+ accuracy and near-perfect AUC, demonstrating research depth and large-scale GPU discipline."
+    }
+  },
+  {
+    title: "College Bus Tracking System",
+    tagline: "Real-Time IoT Fleet Monitoring System",
+    icon: "🚌",
+    size: "large",
+    bullets: [
+      "Built an IoT fleet-tracking system using ESP32 and Neo-6M GPS with a MERN backend for live vehicle monitoring.",
+      "Designed RESTful APIs for high-frequency GPS ingestion, sub-2 second location updates, and dynamic ETA prediction.",
+      "Optimized MongoDB schemas for route history, driver logs, and efficient time-series coordinate retrieval through an interactive dashboard."
+    ],
+    stack: ["ESP32", "Neo-6M GPS", "Node.js", "Express.js", "MongoDB", "React.js"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/anirudhkumar0904/Real-Time-Bus-Monitoring",
+        icon: Github
+      },
+      {
+        label: "Live Demo",
+        href: "https://real-time-bus-monitoring.vercel.app/login",
+        icon: ExternalLink
+      }
+    ],
+    caseStudy: {
+      problem: "College transport needs accurate live positions, useful ETAs, and route history without relying on manual coordination.",
+      system: "GPS hardware streams coordinates into REST APIs, MongoDB stores location timelines, and React presents fleet movement and ETA updates.",
+      proof: "The system demonstrates end-to-end IoT execution across hardware, APIs, time-series data modeling, and a deployed monitoring interface."
     }
   },
   {
@@ -153,11 +192,11 @@ export const projects = [
     icon: "🍕",
     size: "large",
     bullets: [
-      "Event-driven WhatsApp automation using n8n webhooks and Groq LLM for real-time AI intent detection.",
-      "Live menu plus FAQ from Google Sheets with zero hardcoded decision trees.",
-      "Supports concurrent conversations with instant responses via AI-driven workflow orchestration."
+      "Built event-driven WhatsApp automation using n8n webhooks and Groq for real-time intent detection.",
+      "Connected a live menu and FAQ through Google Sheets with no hardcoded decision trees.",
+      "Supported concurrent customer conversations through AI-driven workflow orchestration."
     ],
-    stack: ["n8n", "WhatsApp Business API", "Groq LLM", "Google Sheets API"],
+    stack: ["n8n", "WhatsApp Business API", "Groq", "Google Sheets API"],
     links: [
       {
         label: "GitHub",
@@ -167,32 +206,8 @@ export const projects = [
     ],
     caseStudy: {
       problem: "Small restaurants lose orders when manual replies cannot keep up with repeated questions and unpredictable messages.",
-      system: "n8n receives WhatsApp events, Groq classifies intent, and Sheets keeps menus and FAQ answers live.",
-      proof: "A practical automation system that shows API thinking, workflow design, and customer-facing AI execution."
-    }
-  },
-  {
-    title: "College Bus Tracking System",
-    tagline: "Real-Time IoT Fleet Monitoring System",
-    icon: "🚌",
-    size: "large",
-    bullets: [
-      "Engineered end-to-end IoT tracking using ESP32 + Neo-6M GPS, syncing real-time coordinates to a MERN stack backend for live fleet monitoring.",
-      "Architected RESTful APIs ingesting high-frequency GPS streams with sub-2 second latency for dynamic ETA calculations and live bus movement on React dashboard.",
-      "Optimized MongoDB schemas for time-series location data, route history, and driver logs ensuring high-speed retrieval at scale."
-    ],
-    stack: ["ESP32", "Neo-6M GPS", "Node.js", "Express.js", "MongoDB", "React.js"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/madhumi2607/sastrabus",
-        icon: Github
-      }
-    ],
-    caseStudy: {
-      problem: "College transport needs live visibility, fast ETAs, and reliable route history without manual coordination.",
-      system: "ESP32 GPS devices stream coordinates into REST APIs, MongoDB stores location timelines, and React visualizes live fleet movement.",
-      proof: "Shows full-stack IoT execution across hardware, APIs, real-time UX, and scalable time-series data modeling."
+      system: "n8n receives WhatsApp events, Groq classifies intent, and Google Sheets keeps menu and FAQ answers current.",
+      proof: "The project shows practical API integration, conversational automation, and customer-facing workflow design."
     }
   },
   {
@@ -202,8 +217,8 @@ export const projects = [
     size: "standard",
     bullets: [
       "Engineered a TLSAN-based recommendation engine in PyTorch, outperforming baseline models in predictive accuracy.",
-      "Architected sequential attention models with temporal embeddings to capture multi-scale user behavior transitions.",
-      "Validated using ROC-AUC and Precision-Recall metrics with Matplotlib-driven visual analysis."
+      "Built sequential attention models with temporal embeddings to capture multi-scale user behavior transitions.",
+      "Validated performance using ROC-AUC and precision-recall metrics with Matplotlib-driven analysis."
     ],
     stack: ["Python", "PyTorch", "Pandas", "Scikit-learn", "Matplotlib"],
     links: [
@@ -214,9 +229,9 @@ export const projects = [
       }
     ],
     caseStudy: {
-      problem: "Recommendation engines need to understand what users are likely to choose next, not just what they liked before.",
-      system: "TLSAN models sequential behavior with attention and temporal embeddings, then validates ranking quality with ROC-AUC and PR curves.",
-      proof: "Demonstrates deep learning fluency, evaluation discipline, and production-relevant personalization thinking."
+      problem: "Recommendation engines need to predict what a user will choose next, not only what they preferred historically.",
+      system: "TLSAN models sequential behavior with attention and temporal embeddings, then evaluates ranking quality with ROC-AUC and precision-recall curves.",
+      proof: "The project demonstrates deep-learning implementation, evaluation discipline, and production-relevant personalization thinking."
     }
   }
 ];
@@ -227,37 +242,50 @@ export const skillGroups = [
     icon: BrainCircuit,
     skills: [
       "n8n",
-      "Groq API",
-      "RAG Pipelines",
       "AI Agents",
-      "ChromaDB",
-      "Ollama",
-      "Sentence-Transformers",
-      "LangChain patterns",
-      "Workflow Orchestration",
-      "Webhooks",
-      "API Integrations"
+      "Agentic AI",
+      "LLMs",
+      "RAG",
+      "GraphRAG",
+      "Prompt Engineering",
+      "LangChain",
+      "LlamaIndex",
+      "MCP",
+      "Vector Databases"
     ]
   },
   {
     title: "Cloud & AWS",
     icon: Cloud,
-    skills: ["AWS S3", "EC2", "Bedrock", "Translate", "Comprehend", "Render", "Firebase"]
+    skills: ["AWS S3", "Bedrock", "Translate", "Comprehend", "EC2", "Render"]
   },
   {
-    title: "Languages",
+    title: "Languages & Web",
     icon: Code2,
-    skills: ["Python", "C", "C++", "JavaScript", "HTML", "CSS"]
+    skills: ["Python", "C", "C++", "JavaScript", "HTML", "CSS", "React.js", "FastAPI", "RESTful APIs"]
   },
   {
     title: "Databases",
     icon: Database,
-    skills: ["MySQL", "PL/SQL", "ChromaDB", "Firebase"]
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "ChromaDB", "PL/SQL"]
   },
   {
     title: "Frameworks & Tools",
     icon: Settings2,
-    skills: ["FastAPI", "Flask", "Streamlit", "Git", "GitHub", "Postman", "Figma", "Oracle APEX", "TensorFlow", "Keras", "OpenCV"]
+    skills: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "PyTorch",
+      "TensorFlow/Keras",
+      "Scikit-learn",
+      "Pandas",
+      "NumPy",
+      "Hugging Face",
+      "OpenCV",
+      "Postman",
+      "Oracle APEX"
+    ]
   }
 ];
 

@@ -48,7 +48,7 @@ export function About() {
         <SectionHeading
           eyebrow="Signal in 7 seconds"
           title="Not experimenting with AI. Shipping systems around it."
-          description="A final-year engineer with production instincts, measurable outcomes, and enough product taste to make complex AI feel usable."
+          description="A 2026 computer science graduate with production instincts, measurable outcomes, and enough product taste to make complex AI feel usable."
         />
 
         <div className="grid items-stretch gap-5 lg:grid-cols-[1.15fr_0.85fr]">
@@ -60,15 +60,15 @@ export function About() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-lg leading-9 text-[#94a3b8]">
-              I&apos;m a CS (IoT & Automation) graduate from SASTRA University, graduated
-              May 2026. I build AI systems that work in production — from RAG pipelines with
-              built-in hallucination detection, to deepfake classifiers hitting 99%+ accuracy, to
-              multilingual AWS pipelines cutting costs to ₹0.0014 per review.
+              I&apos;m a CS (IoT & Automation) graduate from SASTRA University. I build AI systems
+              that work in production — from biomedical GraphRAG with PubMed-grounded
+              fact-checking, to deepfake detection at 98%+ accuracy, to multilingual AWS pipelines
+              supporting 9 Indian languages while reducing API costs by 96%.
             </p>
             <p className="mt-6 text-lg leading-9 text-[#94a3b8]">
-              I don&apos;t just experiment with AI — I architect, deploy, and optimize it at scale.
-              The work pattern is consistent: identify the expensive bottleneck, design the system
-              around it, then prove the result with metrics.
+              At Glacis, I built a 91-node automation platform and normalized 7 webhook formats
+              into 30+ event types. The work pattern is consistent: identify the expensive
+              bottleneck, design the system around it, then prove the result with metrics.
             </p>
           </motion.div>
 

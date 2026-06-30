@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     template: "%s | Anirudh Kumar R"
   },
   description:
-    "Portfolio of Anirudh Kumar R, an AI-native software engineer building agentic automation, RAG systems, AWS ML pipelines, and deepfake detection research.",
+    "Portfolio of Anirudh Kumar R, an AI engineer building GraphRAG biomedical discovery systems, agentic automation, AWS ML pipelines, and deepfake detection models.",
   keywords: [
     "Anirudh Kumar R",
     "AI Engineer",
     "Agentic AI",
-    "RAG",
+    "GraphRAG",
     "AWS",
     "Deepfake Detection",
     "n8n Automation",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     url: "/",
     title: "Anirudh Kumar R | AI Engineer",
     description:
-      "AI-native software engineer building production RAG, automation, AWS ML, and deepfake detection systems.",
+      "AI engineer building production GraphRAG, agentic automation, AWS ML, and deepfake detection systems.",
     siteName: "Anirudh Kumar R Portfolio",
     images: [
       {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Anirudh Kumar R | AI Engineer",
     description:
-      "Production AI systems, agentic workflows, RAG hallucination detection, and AWS ML architecture.",
+      "Production GraphRAG systems, 91-node agentic workflows, AWS ML pipelines, and 98%+ deepfake detection.",
     images: ["/og-image.svg"]
   },
   icons: {
