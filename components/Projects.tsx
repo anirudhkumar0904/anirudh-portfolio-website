@@ -24,7 +24,8 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Badge className="border-[#6366f1]/20 bg-[#6366f1]/10 text-[#818cf8]">RAG verification</Badge>
+          <Badge className="border-[#6366f1]/20 bg-[#6366f1]/10 text-[#818cf8]">Dual-LLM verification</Badge>
+          <Badge className="border-[#a855f7]/20 bg-[#a855f7]/10 text-[#c084fc]">Atomic fact-checking</Badge>
           <Badge className="border-[#f59e0b]/20 bg-[#f59e0b]/10 text-[#f59e0b]">AWS cost design</Badge>
           <Badge className="border-[#ef4444]/20 bg-[#ef4444]/10 text-[#ef4444]">Research architecture</Badge>
           <Badge className="border-[#22c55e]/20 bg-[#22c55e]/10 text-[#22c55e]">Workflow automation</Badge>

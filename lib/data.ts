@@ -76,6 +76,41 @@ export const experience = [
 
 export const projects = [
   {
+    title: "Truth Lens AI (HalluciNet)",
+    tagline: "Hallucination-Proof RAG & Atomic Fact-Checking Pipeline",
+    icon: "🛡️",
+    size: "featured",
+    bullets: [
+      "Built HalluciNet, an autonomous RAG pipeline with dual-LLM hallucination detection over document corpora using ChromaDB vector search and Groq API.",
+      "Implemented atomic claim verification where a secondary auditor LLM independently fact-checks every generated claim against retrieved source chunks.",
+      "Delivered granular per-claim factual verdicts and a quantified real-time Trust Score, deployed end-to-end with Streamlit and Sentence-Transformers."
+    ],
+    stack: [
+      "Python",
+      "ChromaDB",
+      "Groq API",
+      "Sentence-Transformers",
+      "Streamlit",
+      "PyPDF",
+      "Dual-LLM Architecture"
+    ],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/anirudhkumar0904",
+        icon: Github
+      }
+    ],
+    caseStudy: {
+      problem:
+        "Standard RAG engines generate plausible-sounding hallucinations when retrieval models return partial, contradictory, or noisy source chunks.",
+      system:
+        "Truth Lens implements a dual-LLM architecture: a primary generator answers queries while an independent auditor LLM decomposes outputs into atomic claims and cross-verifies each against retrieved ChromaDB vectors.",
+      proof:
+        "Delivers per-claim factual audit trails and a dynamic real-time Trust Score, eliminating silent hallucinations in high-stakes research workflows."
+    }
+  },
+  {
     title: "BioGraphRAG",
     tagline: "GraphRAG-Based Biomedical Discovery System",
     icon: "🧬",
