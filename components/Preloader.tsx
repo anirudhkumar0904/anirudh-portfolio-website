@@ -12,25 +12,24 @@ export function Preloader() {
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) {
-      const timeout = window.setTimeout(() => setVisible(false), 700);
+      const timeout = window.setTimeout(() => setVisible(false), 100);
       return () => window.clearTimeout(timeout);
     }
 
     const ctx = gsap.context(() => {
       gsap.to(ringRef.current, {
-        rotate: 360,
-        duration: 1.8,
-        ease: "power2.inOut",
-        repeat: 1
+        rotate: 180,
+        duration: 0.4,
+        ease: "power2.inOut"
       });
       gsap.fromTo(
         textRef.current,
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
+        { opacity: 0, y: 6 },
+        { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }
       );
     });
 
-    const timeout = window.setTimeout(() => setVisible(false), 2300);
+    const timeout = window.setTimeout(() => setVisible(false), 450);
     return () => {
       ctx.revert();
       window.clearTimeout(timeout);

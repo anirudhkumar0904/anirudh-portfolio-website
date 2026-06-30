@@ -15,25 +15,30 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap"
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://anirudh-kumar-r.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://anirudh-portfolio-website.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Anirudh Kumar R | AI Engineer",
+    default: "Anirudh Kumar R | AI Engineer & Systems Architect",
     template: "%s | Anirudh Kumar R"
   },
   description:
-    "Portfolio of Anirudh Kumar R, an AI engineer building GraphRAG biomedical discovery systems, agentic automation, AWS ML pipelines, and deepfake detection models.",
+    "Portfolio of Anirudh Kumar R, an AI engineer building Truth Lens dual-LLM hallucination auditors, BioGraphRAG systems, 91-node agentic automation platforms, and deepfake detection networks.",
   keywords: [
     "Anirudh Kumar R",
     "AI Engineer",
     "Agentic AI",
     "GraphRAG",
-    "AWS",
+    "Truth Lens AI",
+    "Hallucination Auditing",
+    "Dual-LLM Architecture",
+    "AWS ML",
     "Deepfake Detection",
     "n8n Automation",
-    "SASTRA University"
+    "SASTRA University",
+    "ChromaDB",
+    "FastAPI"
   ],
   authors: [{ name: "Anirudh Kumar R" }],
   creator: "Anirudh Kumar R",

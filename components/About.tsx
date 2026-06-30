@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { animate, motion, useInView } from "framer-motion";
-import { useRef } from "react";
 
 import { SectionHeading } from "@/components/SectionHeading";
 import { stats } from "@/lib/data";
@@ -20,7 +19,7 @@ function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [display, setDisplay] = useState(0);
+  const [display, setDisplay] = useState(value);
 
   useEffect(() => {
     if (!inView) return;
@@ -33,11 +32,20 @@ function Counter({
   }, [decimals, inView, value]);
 
   return (
-    <span ref={ref}>
-      {prefix}
-      {decimals > 0 ? display.toFixed(decimals) : Math.round(display)}
-      {suffix}
-    </span>
+    <>
+      <span ref={ref} suppressHydrationWarning>
+        {prefix}
+        {decimals > 0 ? display.toFixed(decimals) : Math.round(display)}
+        {suffix}
+      </span>
+      <noscript>
+        <span>
+          {prefix}
+          {value}
+          {suffix}
+        </span>
+      </noscript>
+    </>
   );
 }
 

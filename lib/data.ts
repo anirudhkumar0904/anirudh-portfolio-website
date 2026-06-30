@@ -1,8 +1,5 @@
 import {
   BrainCircuit,
-  Cloud,
-  Code2,
-  Database,
   ExternalLink,
   Github,
   Linkedin,
@@ -19,13 +16,14 @@ export const profile = {
   github: "https://github.com/anirudhkumar0904",
   linkedin: "https://www.linkedin.com/in/anirudh-kumar0904/",
   resume: "/resume.pdf",
-  headline: "Building intelligent systems that automate, reason, and scale."
+  headline: "Built a 91-node GTM automation platform at Glacis. Shipped a GraphRAG system with PubMed fact-checking. Reduced AWS API costs by 96%."
 };
 
 export const navItems = [
   { label: "About", id: "about" },
   { label: "Experience", id: "experience" },
   { label: "Projects", id: "projects" },
+  { label: "Notes", id: "notes" },
   { label: "Skills", id: "skills" },
   { label: "Awards", id: "achievements" },
   { label: "Contact", id: "contact" }
@@ -117,6 +115,7 @@ export const projects = [
     size: "large",
     bullets: [
       "Built a hybrid GraphRAG platform combining NetworkX knowledge graphs with ChromaDB vector search for multi-hop biomedical reasoning and drug-repurposing retrieval.",
+      "Chose NetworkX over Neo4j to avoid infrastructure overhead for a single-user research tool, while retaining multi-hop graph traversal capabilities.",
       "Developed a FastAPI backend using Llama 3.3 via Groq for evidence-grounded answers and automated fact-checking against PubMed citations.",
       "Delivered sub-second response latency with resilient fallback generation and an interactive Vis.js knowledge-graph interface."
     ],
@@ -146,8 +145,8 @@ export const projects = [
     size: "standard",
     bullets: [
       "Built a multilingual NLP pipeline supporting 9 Indian languages for aspect-based sentiment analysis, SKU-level return-risk prediction, and customer insight extraction.",
-      "Engineered an AWS inference pipeline using Translate, Comprehend, and Bedrock Nova, reducing API costs by 96%.",
-      "Generated LLM-powered review summaries and supplier recommendations through a FastAPI service deployed with AWS infrastructure."
+      "Designed a batched translation pipeline with Translate before Comprehend to avoid per-language Comprehend endpoints, achieving the 96% cost reduction.",
+      "Engineered an AWS inference pipeline using Translate, Comprehend, and Bedrock Nova, generating LLM-powered review summaries deployed with AWS infrastructure."
     ],
     stack: ["AWS S3", "Translate", "Comprehend", "Bedrock Nova", "FastAPI", "EC2"],
     links: [
@@ -175,8 +174,8 @@ export const projects = [
     size: "standard",
     bullets: [
       "Designed a dual-stream model combining MobileNetV2 visual features, DCT-based frequency features, and cross-attention for robust deepfake face detection.",
-      "Trained and optimized on 140K real and fake face images using mixed-precision training on NVIDIA DGX A100 GPUs.",
-      "Achieved 98%+ accuracy and near-perfect AUC through progressive learning and rigorous unseen-data evaluation."
+      "Combined spatial (MobileNetV2) and frequency (DCT) streams because GAN-generated artifacts are more visible in frequency domain, improving detection on unseen generators.",
+      "Trained and optimized on 140K real and fake face images using mixed-precision training on NVIDIA DGX A100 GPUs, achieving 98%+ accuracy."
     ],
     stack: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Matplotlib"],
     links: [
@@ -273,58 +272,60 @@ export const projects = [
 
 export const skillGroups = [
   {
-    title: "AI & Automation",
+    title: "Core Stack (Daily Production Use)",
+    tier: "core",
     icon: BrainCircuit,
     skills: [
+      "Python",
+      "FastAPI",
       "n8n",
-      "AI Agents",
-      "Agentic AI",
-      "LLMs",
-      "RAG",
-      "GraphRAG",
-      "Prompt Engineering",
-      "LangChain",
-      "LlamaIndex",
-      "MCP",
-      "Vector Databases"
+      "AWS Bedrock",
+      "AWS Translate",
+      "AWS Comprehend",
+      "PyTorch",
+      "ChromaDB"
     ]
   },
   {
-    title: "Cloud & AWS",
-    icon: Cloud,
-    skills: ["AWS S3", "Bedrock", "Translate", "Comprehend", "EC2", "Render"]
-  },
-  {
-    title: "Languages & Web",
-    icon: Code2,
-    skills: ["Python", "C", "C++", "JavaScript", "HTML", "CSS", "React.js", "FastAPI", "RESTful APIs"]
-  },
-  {
-    title: "Databases",
-    icon: Database,
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "ChromaDB", "PL/SQL"]
-  },
-  {
-    title: "Frameworks & Tools",
+    title: "Working Knowledge (Shipped Products With)",
+    tier: "working",
     icon: Settings2,
     skills: [
-      "Git",
-      "GitHub",
-      "Docker",
-      "PyTorch",
+      "React.js",
+      "Next.js",
+      "MongoDB",
       "TensorFlow/Keras",
-      "Scikit-learn",
-      "Pandas",
-      "NumPy",
-      "Hugging Face",
-      "OpenCV",
-      "Postman",
-      "Oracle APEX"
+      "Docker",
+      "PostgreSQL",
+      "LangChain",
+      "LlamaIndex",
+      "GraphRAG"
     ]
   }
 ];
 
 export const exploring = ["LangGraph", "CrewAI", "Claude APIs", "TypeScript"];
+
+export const engineeringNotes = [
+  {
+    title: "Why I normalized 7 webhook formats into a single event schema",
+    tagline: "Architecture & Event Systems",
+    summary: "Handling varied CRM and marketing webhooks at Glacis required decoupling ingestion from workflow processing.",
+    content: "When building the 91-node automation engine at Glacis, every upstream tool (CRMs, lead capture, support desks) sent radically different JSON payloads. Instead of writing custom parsing logic inside every automation node, I architected a unified ingress pipeline. We normalized 7 disparate webhook schemas into a single canonical event format with 30+ standardized event types. This allowed workflow nodes to operate strictly on the normalized schema, cutting maintenance overhead by 80% and making downstream routing deterministic."
+  },
+  {
+    title: "The cost model that drove FashionSense's 96% API savings",
+    tagline: "AWS FinOps & Pipeline Optimization",
+    summary: "Linear scaling of multilingual sentiment inference would have made review analysis cost-prohibitive.",
+    content: "Deploying aspect-based sentiment analysis across 9 Indian languages initially required dedicated language-specific endpoints or heavy multi-lingual LLM calls for every review. I restructured the pipeline to decouple translation from inference: using high-throughput AWS Translate batching before passing unified English text to a single consolidated Amazon Comprehend endpoint and selective Bedrock Nova calls. By filtering redundant tokens prior to LLM reasoning, we achieved a 96% reduction in per-review AWS API costs without sacrificing SKU classification accuracy."
+  },
+  {
+    title: "What GraphRAG gets wrong about biomedical retrieval",
+    tagline: "Domain-Specific Knowledge Retrieval",
+    summary: "Standard vector retrieval misses implicit multi-hop relationships critical for drug repurposing.",
+    content: "Dense embeddings excel at semantic similarity but struggle when a biological mechanism connects a gene to a disease via an intermediate enzyme step not stated explicitly in a single text chunk. In BioGraphRAG, I combined NetworkX directed graphs with ChromaDB vector search. When a query arrives, the system doesn't just retrieve similar PubMed abstracts; it performs multi-hop graph traversal to find explicit entity paths, then validates those claims against source literature before generating the final Llama 3.3 response."
+  }
+];
 
 export const achievements = [
   {

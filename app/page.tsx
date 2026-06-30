@@ -4,6 +4,7 @@ import { CommandPalette } from "@/components/CommandPalette";
 import { Contact } from "@/components/Contact";
 import { CustomCursor } from "@/components/CustomCursor";
 import { EasterEgg } from "@/components/EasterEgg";
+import { EngineeringNotes } from "@/components/EngineeringNotes";
 import { Experience } from "@/components/Experience";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -27,6 +28,7 @@ export default function Home() {
         <About />
         <Experience />
         <Projects />
+        <EngineeringNotes />
         <Skills />
         <Achievements />
         <Contact />

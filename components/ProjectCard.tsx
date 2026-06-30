@@ -111,7 +111,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 aria-expanded={expanded}
                 className={cn(isFeatured && "lg:hidden")}
               >
-                Case Study
+                {expanded ? "Hide Architecture Study" : "View Architecture Study"}
                 <ChevronDown
                   className={cn("h-4 w-4 transition", expanded ? "rotate-180" : "rotate-0")}
                   aria-hidden="true"
